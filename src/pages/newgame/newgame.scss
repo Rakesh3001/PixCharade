@@ -1,0 +1,14 @@
+page-newgame {
+  .header{
+    display: flex;
+    .teamname {
+      flex:1;
+    }
+  }
+  .userIcon{
+    font-size: 3.2em;
+  }
+  .content {
+    background-color: #e3fffd;
+  }
+}

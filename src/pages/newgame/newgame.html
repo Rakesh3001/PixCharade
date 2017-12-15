@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar class="navbar" color = red>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>PicCharade</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="content">
+  <div padding>
+    <ion-segment [(ngModel)]="team" color = secondary>
+      <ion-segment-button value="teams">
+        Teams
+      </ion-segment-button>
+      <!--<ion-segment-button value="points">-->
+      <!--Points-->
+      <!--</ion-segment-button>-->
+      <ion-segment-button value="view">
+        Canvas
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="team">
+    <div *ngSwitchCase="'teams'">
+      <ion-card color = blue>
+
+        <ion-list >
+          <ion-list-header>
+            <div class="header">
+              <div class="teamname">
+                Team A
+              </div>
+              <div>
+                Score: 10
+              </div>
+            </div>
+          </ion-list-header>
+          <ion-item color = box>
+            <ion-avatar item-start>
+              <ion-icon class="userIcon" name="contact"></ion-icon>
+            </ion-avatar>
+            <h2>Ruby</h2>
+          </ion-item>
+          <ion-item >
+            <ion-avatar item-start>
+              <ion-icon class="userIcon" name="contact"></ion-icon>
+            </ion-avatar>
+            <h2>Ang</h2>
+          </ion-item>
+          <ion-item color = box>
+            <ion-avatar item-start>
+              <ion-icon class="userIcon" name="contact"></ion-icon>
+            </ion-avatar>
+            <h2>Tom</h2>
+          </ion-item>
+        </ion-list>
+
+      </ion-card>
+      <ion-card color = blue>
+        <ion-list>
+          <ion-list-header>
+            <div class="header">
+              <div class="teamname">
+                Team B
+              </div>
+              <div>
+                Score: 12
+              </div>
+            </div>
+          </ion-list-header>
+          <ion-item color = box>
+            <ion-avatar item-start>
+              <ion-icon class="userIcon" name="contact"></ion-icon>
+            </ion-avatar>
+            <h2>Java</h2>
+          </ion-item>
+          <ion-item>
+            <ion-avatar item-start>
+              <ion-icon class="userIcon" name="contact"></ion-icon>
+            </ion-avatar>
+            <h2>Sassy</h2>
+          </ion-item>
+          <ion-item color = box>
+            <ion-avatar item-start>
+              <ion-icon class="userIcon" name="contact"></ion-icon>
+            </ion-avatar>
+            <h2>Power</h2>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+    </div>
+
+    <div *ngSwitchCase="'view'">
+        <canvas-draw></canvas-draw>
+    </div>
+
+  </div>
+</ion-content>
